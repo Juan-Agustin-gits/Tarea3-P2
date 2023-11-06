@@ -167,5 +167,25 @@ public class Expendedor {
     public Deposito<Monedas> getMonvu(){
         return monvu;
     }
+
+    public Deposito<CocaCola> getCoca() {
+        return coca;
+    }
+
+    public Deposito<Sprite> getSprite() {
+        return sprite;
+    }
+
+    public Deposito<Fanta> getFanta() {
+        return fanta;
+    }
+
+    public Deposito<Super8> getSuper8() {
+        return super8;
+    }
+
+    public Deposito<Snikers> getSniker() {
+        return sniker;
+    }
 }
 

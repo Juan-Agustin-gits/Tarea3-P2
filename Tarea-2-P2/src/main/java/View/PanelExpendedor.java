@@ -1,11 +1,14 @@
 package View;
 
+import codigo.Expendedor;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 
 public class PanelExpendedor extends JPanel {
     private int NewSize= 80;
@@ -81,45 +84,48 @@ public class PanelExpendedor extends JPanel {
         private JLabel JSnikers4 = new JLabel(SnikersNueva);
 
     private FlowLayout layout = new FlowLayout(FlowLayout.LEFT,30,10);
+    private Expendedor expendedor;
     public PanelExpendedor() {
+        expendedor = new Expendedor(5);
         this.setBackground(new Color(131, 8, 8));
         this.setLayout(layout);
         this.setBorder(BordeExpendeodr);
             //Columna 0
             this.add(JFanta);
-            this.add(JCocaCola);
-            this.add(JSprite);
-            this.add(JSuperOcho);
-            this.add(JSnikers);
-            //Columna 1
             this.add(JFanta1);
-            this.add(JCocaCola1);
-            this.add(JSprite1);
-            this.add(JSuperOcho1);
-            this.add(JSnikers1);
-            //Columna 2
             this.add(JFanta2);
-            this.add(JCocaCola2);
-            this.add(JSprite2);
-            this.add(JSuperOcho2);
-            this.add(JSnikers2);
-            //Columna 3
             this.add(JFanta3);
-            this.add(JCocaCola3);
-            this.add(JSprite3);
-            this.add(JSuperOcho3);
-            this.add(JSnikers3);
-            //Columna 4
             this.add(JFanta4);
+            //Columna 1
+            this.add(JCocaCola);
+            this.add(JCocaCola1);
+            this.add(JCocaCola2);
+            this.add(JCocaCola3);
             this.add(JCocaCola4);
+            //Columna 2
+            this.add(JSprite);
+            this.add(JSprite1);
+            this.add(JSprite2);
+            this.add(JSprite3);
             this.add(JSprite4);
+            //Columna 3
+            this.add(JSuperOcho);
+            this.add(JSuperOcho1);
+            this.add(JSuperOcho2);
+            this.add(JSuperOcho3);
             this.add(JSuperOcho4);
+            //Columna 4
+            this.add(JSnikers);
+            this.add(JSnikers1);
+            this.add(JSnikers2);
+            this.add(JSnikers3);
             this.add(JSnikers4);
         this.setBounds(0,0,600,510);
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
             VentanaLlenarDeposito ventanaLlenarDeposito = new VentanaLlenarDeposito();
+                ventanaLlenarDeposito.funcionBoton();
             }
         });
     }
@@ -127,4 +133,107 @@ public class PanelExpendedor extends JPanel {
         super.paint(g);
     }
 
+    public Expendedor getExpendedor() {
+        return expendedor;
+    }
+
+    public JLabel getJFanta() {
+        return JFanta;
+    }
+
+    public JLabel getJFanta1() {
+        return JFanta1;
+    }
+
+    public JLabel getJFanta2() {
+        return JFanta2;
+    }
+
+    public JLabel getJFanta3() {
+        return JFanta3;
+    }
+
+    public JLabel getJFanta4() {
+        return JFanta4;
+    }
+
+    public JLabel getJCocaCola() {
+        return JCocaCola;
+    }
+
+    public JLabel getJCocaCola1() {
+        return JCocaCola1;
+    }
+
+    public JLabel getJCocaCola2() {
+        return JCocaCola2;
+    }
+
+    public JLabel getJCocaCola3() {
+        return JCocaCola3;
+    }
+
+    public JLabel getJCocaCola4() {
+        return JCocaCola4;
+    }
+
+    public JLabel getJSprite() {
+        return JSprite;
+    }
+
+    public JLabel getJSprite1() {
+        return JSprite1;
+    }
+
+    public JLabel getJSprite2() {
+        return JSprite2;
+    }
+
+    public JLabel getJSprite3() {
+        return JSprite3;
+    }
+
+    public JLabel getJSprite4() {
+        return JSprite4;
+    }
+
+    public JLabel getJSuperOcho() {
+        return JSuperOcho;
+    }
+
+    public JLabel getJSuperOcho1() {
+        return JSuperOcho1;
+    }
+
+    public JLabel getJSuperOcho2() {
+        return JSuperOcho2;
+    }
+
+    public JLabel getJSuperOcho3() {
+        return JSuperOcho3;
+    }
+
+    public JLabel getJSuperOcho4() {
+        return JSuperOcho4;
+    }
+
+    public JLabel getJSnikers() {
+        return JSnikers;
+    }
+
+    public JLabel getJSnikers1() {
+        return JSnikers1;
+    }
+
+    public JLabel getJSnikers2() {
+        return JSnikers2;
+    }
+
+    public JLabel getJSnikers3() {
+        return JSnikers3;
+    }
+
+    public JLabel getJSnikers4() {
+        return JSnikers4;
+    }
 }
