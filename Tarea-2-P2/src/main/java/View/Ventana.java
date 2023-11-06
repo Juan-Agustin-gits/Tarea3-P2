@@ -17,6 +17,7 @@ public class Ventana extends JFrame {
          */
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(1250,700);
+        this.add(new PanelComprador());
         this.add(new DepositoMonedas());
         this.add(new PanelExpendedor());
         this.add(new PanelPrincipal(),BorderLayout.CENTER);
