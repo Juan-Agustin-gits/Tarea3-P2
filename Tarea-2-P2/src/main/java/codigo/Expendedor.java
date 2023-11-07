@@ -187,5 +187,9 @@ public class Expendedor {
     public Deposito<Snikers> getSniker() {
         return sniker;
     }
+
+    public int getCantidadProductos() {
+        return cantidadProductos;
+    }
 }
 

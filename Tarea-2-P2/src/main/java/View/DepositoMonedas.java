@@ -21,8 +21,6 @@ public class DepositoMonedas extends JPanel {
         this.setOpaque(true);
         this.setBorder(borde);
         this.setLayout(layout);
-        this.add(moneda1);
-        this.add(moneda2);
         this.setBounds(0,510,1233,150);
     }
     public void paint( Graphics g ){

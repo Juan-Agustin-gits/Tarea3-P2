@@ -37,44 +37,5 @@ public class VentanaLlenarDeposito extends JFrame {
         int sizeSprite = panelExpendedor.getExpendedor().getSprite().size();
         int sizeSuper = panelExpendedor.getExpendedor().getSuper8().size();
         int sizesprite = panelExpendedor.getExpendedor().getSniker().size();
-
-        switch (sizeFanta){
-            case 5:
-                panelExpendedor.getJFanta().setVisible(true);
-                panelExpendedor.getJFanta1().setVisible(true);
-                panelExpendedor.getJFanta2().setVisible(true);
-                panelExpendedor.getJFanta3().setVisible(true);
-                panelExpendedor.getJFanta4().setVisible(true);
-            case 4:
-                panelExpendedor.getJFanta().setVisible(false);
-                panelExpendedor.getJFanta1().setVisible(true);
-                panelExpendedor.getJFanta2().setVisible(true);
-                panelExpendedor.getJFanta3().setVisible(true);
-                panelExpendedor.getJFanta4().setVisible(true);
-            case 3:
-                panelExpendedor.getJFanta().setVisible(false);
-                panelExpendedor.getJFanta1().setVisible(false);
-                panelExpendedor.getJFanta2().setVisible(true);
-                panelExpendedor.getJFanta3().setVisible(true);
-                panelExpendedor.getJFanta4().setVisible(true);
-            case 2:
-                panelExpendedor.getJFanta().setVisible(false);
-                panelExpendedor.getJFanta1().setVisible(false);
-                panelExpendedor.getJFanta2().setVisible(false);
-                panelExpendedor.getJFanta3().setVisible(true);
-                panelExpendedor.getJFanta4().setVisible(true);
-            case 1:
-                panelExpendedor.getJFanta().setVisible(false);
-                panelExpendedor.getJFanta1().setVisible(false);
-                panelExpendedor.getJFanta2().setVisible(false);
-                panelExpendedor.getJFanta3().setVisible(false);
-                panelExpendedor.getJFanta4().setVisible(true);
-            case 0:
-                panelExpendedor.getJFanta().setVisible(false);
-                panelExpendedor.getJFanta1().setVisible(false);
-                panelExpendedor.getJFanta2().setVisible(false);
-                panelExpendedor.getJFanta3().setVisible(false);
-                panelExpendedor.getJFanta4().setVisible(false);
-        };
     }
 }
