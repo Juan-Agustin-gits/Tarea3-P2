@@ -12,8 +12,6 @@ public class PanelPrincipal extends JPanel {
              //depositoMonedas = new DepositoMonedas();
              this.setBackground(new Color(255, 255, 255));
              this.setVisible(true);
-             this.setBackground(new Color(25, 255, 255));
-             this.setVisible(true);
              this.setBounds(0,0,1233,500);
              this.add(comprador = new PanelComprador());
              this.add(expendedor = new PanelExpendedor());
