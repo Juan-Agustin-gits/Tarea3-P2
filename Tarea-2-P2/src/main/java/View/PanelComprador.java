@@ -44,6 +44,7 @@ public class PanelComprador extends JPanel {
         cboton2();
         cboton3();
         cboton4();
+        this.setVisible(true);
     }
 
     private void cboton0() {
