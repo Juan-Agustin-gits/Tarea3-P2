@@ -8,11 +8,16 @@ public class PanelPrincipal extends JPanel {
     private PanelExpendedor expendedor;
     private DepositoMonedas depositoMonedas;
          public PanelPrincipal(){
-             expendedor = new PanelExpendedor();
-             comprador = new PanelComprador();
-             depositoMonedas = new DepositoMonedas();
+             this.setLayout(null);
+             //depositoMonedas = new DepositoMonedas();
              this.setBackground(new Color(255, 255, 255));
              this.setVisible(true);
+             this.setBackground(new Color(25, 255, 255));
+             this.setVisible(true);
+             this.setBounds(0,0,1233,500);
+             this.add(comprador = new PanelComprador());
+             this.add(expendedor = new PanelExpendedor());
+             this.add(depositoMonedas = new DepositoMonedas());
         }
         private int x = 50 ;
         private int y = 50 ;
@@ -21,4 +26,12 @@ public class PanelPrincipal extends JPanel {
              super.paint(g);
              //g.fillOval(x- radio,y - radio,2*radio,2*radio);
         }
+
+    public PanelComprador getComprador() {
+        return comprador;
+    }
+
+    public PanelExpendedor getPanelExpendedor() {
+        return expendedor;
+    }
 }

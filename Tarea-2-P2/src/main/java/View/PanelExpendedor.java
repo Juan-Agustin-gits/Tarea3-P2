@@ -8,46 +8,33 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
-
 public class PanelExpendedor extends JPanel{
     public ImageIcon ReSize(ImageIcon foto){
         Image FotoOriginal = foto.getImage();
         Image FotoSize = FotoOriginal.getScaledInstance(NewSize,NewSize,Image.SCALE_SMOOTH);
-        ImageIcon fotoNueva = new ImageIcon(FotoSize);
-        return  fotoNueva;
-    };
+        ImageIcon fotoNueva = new ImageIcon(FotoSize);return  fotoNueva;};
     private int NewSize= 80;
     private ImageIcon FantaIcon = new ImageIcon("Tarea-2-P2/src/main/java/View/Imagenes/FantaLata.png");
         private ImageIcon FantaNueva = ReSize(FantaIcon);
-            public ImageIcon getFantaNueva() {
-        return FantaNueva;
-    }
+            public ImageIcon getFantaNueva() {return FantaNueva;}
     //Fanta de tamaño 100px x 100px
     private ImageIcon CocaColaIcon = new ImageIcon("Tarea-2-P2/src/main/java/View/Imagenes/CocaColaLata.png");
         private ImageIcon CocaColaNueva = ReSize(CocaColaIcon);
-            public ImageIcon getCocaColaNueva() {
-        return CocaColaNueva;
-    }
+            public ImageIcon getCocaColaNueva() {return CocaColaNueva;}
     //CocaCola de tamaño 100px x 100px
 
     private ImageIcon SpriteIcon = new ImageIcon("Tarea-2-P2/src/main/java/View/Imagenes/SpriteLata.png");
        private ImageIcon SpriteNueva = ReSize(SpriteIcon);
-            public ImageIcon getSpriteNueva() {
-        return SpriteNueva;
-    }
+            public ImageIcon getSpriteNueva() {return SpriteNueva;}
     //Sprite Tamaño 100px x 100px
 
         private ImageIcon Super8Icon = new ImageIcon("Tarea-2-P2/src/main/java/View/Imagenes/SuperOcho.png");
             private ImageIcon Super8Nueva = ReSize(Super8Icon);
-                public ImageIcon getSuper8Nueva() {
-        return Super8Nueva;
-    }
+                public ImageIcon getSuper8Nueva() {return Super8Nueva;}
     //Super8 de tamaño 100px x 10
         private ImageIcon SnikersIcon = new ImageIcon("Tarea-2-P2/src/main/java/View/Imagenes/Snikers.png");
             private ImageIcon SnikersNueva = ReSize(SnikersIcon);
-                public ImageIcon getSnikersNueva() {
-        return SnikersNueva;
-    }
+                public ImageIcon getSnikersNueva(){return SnikersNueva;}
     //Snikers de tamaño 100px x 100px
     private Border BordeExpendeodr = BorderFactory.createLineBorder(new Color(0,0,0),3);
 
@@ -61,6 +48,11 @@ public class PanelExpendedor extends JPanel{
     private Color colorExp = new Color(131, 8, 8);
     private JPanel[] paneles = new JPanel[5];
     public PanelExpendedor() {
+        Border BordeExpendeodr = BorderFactory.createLineBorder(new Color(0,0,0),3);
+        this.setVisible(true);
+        this.setBackground(new Color(131, 8, 8));
+        setBorder(BordeExpendeodr);
+        this.setBounds(0,0,600,510);
         //expendedor = new Expendedor(5);
         this.setLayout(new GridLayout(5,1));
         this.setBorder(BordeExpendeodr);
