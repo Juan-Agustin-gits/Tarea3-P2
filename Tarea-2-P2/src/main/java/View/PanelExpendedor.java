@@ -14,25 +14,25 @@ public class PanelExpendedor extends JPanel{
         Image FotoSize = FotoOriginal.getScaledInstance(NewSize,NewSize,Image.SCALE_SMOOTH);
         ImageIcon fotoNueva = new ImageIcon(FotoSize);return  fotoNueva;};
     private int NewSize= 80;
-    private ImageIcon FantaIcon = new ImageIcon("Tarea-2-P2/src/main/java/View/Imagenes/FantaLata.png");
+    private ImageIcon FantaIcon = new ImageIcon("C:\\Users\\drago\\OneDrive\\Escritorio\\Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\FantaLata.png");
         private ImageIcon FantaNueva = ReSize(FantaIcon);
             public ImageIcon getFantaNueva() {return FantaNueva;}
     //Fanta de tamaño 100px x 100px
-    private ImageIcon CocaColaIcon = new ImageIcon("Tarea-2-P2/src/main/java/View/Imagenes/CocaColaLata.png");
+    private ImageIcon CocaColaIcon = new ImageIcon("C:\\Users\\drago\\OneDrive\\Escritorio\\Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\CocaColaLata.png");
         private ImageIcon CocaColaNueva = ReSize(CocaColaIcon);
             public ImageIcon getCocaColaNueva() {return CocaColaNueva;}
     //CocaCola de tamaño 100px x 100px
 
-    private ImageIcon SpriteIcon = new ImageIcon("Tarea-2-P2/src/main/java/View/Imagenes/SpriteLata.png");
+    private ImageIcon SpriteIcon = new ImageIcon("C:\\Users\\drago\\OneDrive\\Escritorio\\Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\SpriteLata.png");
        private ImageIcon SpriteNueva = ReSize(SpriteIcon);
             public ImageIcon getSpriteNueva() {return SpriteNueva;}
     //Sprite Tamaño 100px x 100px
 
-        private ImageIcon Super8Icon = new ImageIcon("Tarea-2-P2/src/main/java/View/Imagenes/SuperOcho.png");
+        private ImageIcon Super8Icon = new ImageIcon("C:\\Users\\drago\\OneDrive\\Escritorio\\Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\SuperOcho.png");
             private ImageIcon Super8Nueva = ReSize(Super8Icon);
                 public ImageIcon getSuper8Nueva() {return Super8Nueva;}
     //Super8 de tamaño 100px x 10
-        private ImageIcon SnikersIcon = new ImageIcon("Tarea-2-P2/src/main/java/View/Imagenes/Snikers.png");
+        private ImageIcon SnikersIcon = new ImageIcon("C:\\Users\\drago\\OneDrive\\Escritorio\\Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\Snikers.png");
             private ImageIcon SnikersNueva = ReSize(SnikersIcon);
                 public ImageIcon getSnikersNueva(){return SnikersNueva;}
     //Snikers de tamaño 100px x 100px
