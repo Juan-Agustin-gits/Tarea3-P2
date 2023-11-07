@@ -1,8 +1,6 @@
 package View;
 
 import codigo.Expendedor;
-import codigo.Fanta;
-
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -11,14 +9,14 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
-public class PanelExpendedor extends JPanel {
-    private int NewSize= 80;
+public class PanelExpendedor extends JPanel{
     public ImageIcon ReSize(ImageIcon foto){
         Image FotoOriginal = foto.getImage();
         Image FotoSize = FotoOriginal.getScaledInstance(NewSize,NewSize,Image.SCALE_SMOOTH);
         ImageIcon fotoNueva = new ImageIcon(FotoSize);
         return  fotoNueva;
     };
+    private int NewSize= 80;
     private ImageIcon FantaIcon = new ImageIcon("Tarea-2-P2/src/main/java/View/Imagenes/FantaLata.png");
         private ImageIcon FantaNueva = ReSize(FantaIcon);
             public ImageIcon getFantaNueva() {

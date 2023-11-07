@@ -8,6 +8,7 @@ import java.awt.*;
 public class Ventana extends JFrame {
     private PanelPrincipal panelPrincipal;
     private PanelExpendedor panelExpendedor ;
+    private PanelComprador panelComprador;
     private DepositoMonedas depositoMonedas;
     private Comprador comprador;
     public Ventana(){
@@ -22,11 +23,10 @@ public class Ventana extends JFrame {
          */
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(1250,700);
+        this.add(panelComprador = new PanelComprador());
         this.add(depositoMonedas = new DepositoMonedas());
-            depositoMonedas.setVisible(true);
         this.add(panelExpendedor = new PanelExpendedor());
-            panelExpendedor.setVisible(true);
-        this.add(panelPrincipal = new PanelPrincipal());
+        this.add(new PanelPrincipal(),BorderLayout.CENTER);
         this.setVisible(true);
     }
 
