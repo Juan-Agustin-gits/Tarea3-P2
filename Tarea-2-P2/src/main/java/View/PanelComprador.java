@@ -16,7 +16,7 @@ public class PanelComprador extends JPanel {
     JButton boton2;
     JButton boton3;
     JButton boton4;
-    Border borde = BorderFactory.createLineBorder(new Color(255, 128, 0), 5);
+    Border borde = BorderFactory.createLineBorder(new Color(255, 128, 0), 0);
     /* private JTextField cuadroDeTexto; */
 
     public PanelComprador() {
@@ -24,7 +24,7 @@ public class PanelComprador extends JPanel {
         this.setBackground(new Color(50, 24, 134));
         setBorder(borde);
         this.setLayout(null);
-        this.setBounds(600, 0, 635, 510);
+        this.setBounds(600, 0, 635, 700);
         boton0 = new JButton("0");
         boton0.setBounds(50, 5, 50, 50);
         boton1 = new JButton("1");

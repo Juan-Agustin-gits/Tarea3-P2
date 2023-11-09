@@ -22,7 +22,7 @@ public class PanelExpendedor extends JPanel {
         static JLabel[] labelssprite = new JLabel[5];
         static JLabel[] labelssuper8 = new JLabel[5];
         static JLabel[] labelssnickers = new JLabel[5];
-        Border BordeExpendeodr = BorderFactory.createLineBorder(new Color(0, 0, 0), 3);
+        Border BordeExpendeodr = BorderFactory.createLineBorder(new Color(0, 0, 0), 0);
 
         public PanelExpendedor() {
             this.compri = compri;
@@ -75,7 +75,7 @@ public class PanelExpendedor extends JPanel {
             this.setVisible(true);
             this.setBackground(new Color(131, 8, 8));
             setBorder(BordeExpendeodr);
-            this.setBounds(0, 0, 600, 510);
+            this.setBounds(0, 0, 625, 700);
         }
         public void paint(Graphics g) {
             super.paint(g);
