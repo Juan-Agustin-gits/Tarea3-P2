@@ -15,7 +15,7 @@ public class PanelPrincipal extends JPanel {
              this.setBounds(0, 0, 1233, 500);
              this.add(comprador = new PanelComprador());
              this.add(expendedor = new PanelExpendedor());
-             //this.add(depositoMonedas = new DepositoMonedas());
+             this.add(depositoMonedas = new DepositoMonedas());
         }
     public void paint ( Graphics g ){
              super.paint(g);

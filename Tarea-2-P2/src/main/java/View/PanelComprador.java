@@ -24,7 +24,7 @@ public class PanelComprador extends JPanel {
         this.setBackground(new Color(50, 24, 134));
         setBorder(borde);
         this.setLayout(null);
-        this.setBounds(600, 0, 635, 700);
+        this.setBounds(600, 0, 635, 400);
         boton0 = new JButton("0");
         boton0.setBounds(50, 5, 50, 50);
         boton1 = new JButton("1");

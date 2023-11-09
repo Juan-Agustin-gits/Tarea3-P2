@@ -75,7 +75,7 @@ public class PanelExpendedor extends JPanel {
             this.setVisible(true);
             this.setBackground(new Color(131, 8, 8));
             setBorder(BordeExpendeodr);
-            this.setBounds(0, 0, 625, 700);
+            this.setBounds(0, 0, 625, 400);
         }
         public void paint(Graphics g) {
             super.paint(g);
