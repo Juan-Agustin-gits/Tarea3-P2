@@ -92,10 +92,15 @@ public class PanelExpendedor extends JPanel{
             public void mouseClicked(MouseEvent e) {
             VentanaLlenarDeposito ventanaLlenarDeposito = new VentanaLlenarDeposito();
                 ventanaLlenarDeposito.funcionBoton();
+                prueba();
             }
         });
     }
-    public void paint( Graphics g ){
+    public void prueba(){
+        FantasArray[0].setVisible(false);
+    }
+
+    public void paint(Graphics g ){
         super.paint(g);
     }
 
