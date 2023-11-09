@@ -47,6 +47,30 @@ public class PanelComprador extends JPanel {
                 expri.sacarcoca();
             }
         });
+        boton1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                expri.sacarfanta();
+            }
+        });
+        boton2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                expri.sacarsprite();
+            }
+        });
+        boton3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                expri.sacarsuper8();
+            }
+        });
+        boton4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                expri.sacarsnickers();
+            }
+        });
         /*cuadroDeTexto = new JTextField();
         cuadroDeTexto.setBounds(10, 50, 200, 30);
         cuadroDeTexto.setVisible(false);
