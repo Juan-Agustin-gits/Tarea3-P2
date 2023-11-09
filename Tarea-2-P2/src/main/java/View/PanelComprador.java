@@ -2,20 +2,25 @@ package View;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import codigo.*;
 
 public class PanelComprador extends JPanel {
     /*private ImageIcon super8;*/
-    private JButton boton0;
-    private JButton boton1;
-    private JButton boton2;
-    private JButton boton3;
-    private JButton boton4;
+    private PanelExpendedor expri;
+    JButton boton0;
+    JButton boton1;
+    JButton boton2;
+    JButton boton3;
+    JButton boton4;
     Border borde = BorderFactory.createLineBorder(new Color(255, 128, 0), 5);
+    /* private JTextField cuadroDeTexto; */
 
     public PanelComprador() {
+        expri = new PanelExpendedor();
         this.setBackground(new Color(50, 24, 134));
         setBorder(borde);
         this.setLayout(null);
@@ -35,170 +40,17 @@ public class PanelComprador extends JPanel {
         this.add(boton2);
         this.add(boton3);
         this.add(boton4);
-        cboton0();
-        cboton1();
-        cboton2();
-        cboton3();
-        cboton4();
         this.setVisible(true);
+        boton0.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                expri.sacarcoca();
+            }
+        });
+        /*cuadroDeTexto = new JTextField();
+        cuadroDeTexto.setBounds(10, 50, 200, 30);
+        cuadroDeTexto.setVisible(false);
+        this.add(cuadroDeTexto);*/
     }
-
-    private void cboton0() {
-        MouseListener list = new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-        };
-        boton0.addMouseListener(list);
-    }
-
-    private void cboton1() {
-        MouseListener list = new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-        };
-        boton1.addMouseListener(list);
-    }
-
-    private void cboton2() {
-        MouseListener list = new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-        };
-        boton2.addMouseListener(list);
-    }
-
-    private void cboton3() {
-        MouseListener list = new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-        };
-        boton3.addMouseListener(list);
-    }
-
-    private void cboton4() {
-        MouseListener list = new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-        };
-        boton4.addMouseListener(list);
-    }
-
-    //hay que lograr hacer que lo siguiente pase cuando se presione algun boton
-    /*public void paint(Graphics g) {
-        super.paint(g);
-        if (super8 != null) {
-            super8.paintIcon(this, g, 200, 10);
-        }
-    } */
 }
 
