@@ -2,11 +2,14 @@ package View;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import codigo.*;
 
 public class PanelComprador extends JPanel {
+    private PanelExpendedor panelExpendedor;
     /*private ImageIcon super8;*/
     private JButton boton0;
     private JButton boton1;
@@ -20,6 +23,7 @@ public class PanelComprador extends JPanel {
         setBorder(borde);
         this.setLayout(null);
         this.setBounds(600, 0, 635, 510);
+        panelExpendedor = new PanelExpendedor();
         boton0 = new JButton("0");
         boton0.setBounds(50, 5, 50, 50);
         boton1 = new JButton("1");
@@ -35,6 +39,12 @@ public class PanelComprador extends JPanel {
         this.add(boton2);
         this.add(boton3);
         this.add(boton4);
+        boton0.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
         cboton0();
         cboton1();
         cboton2();
