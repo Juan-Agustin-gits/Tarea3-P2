@@ -16,25 +16,28 @@ public class PanelComprador extends JPanel {
     JButton boton2;
     JButton boton3;
     JButton boton4;
+    private DepositoMonedas depositito;
     Border borde = BorderFactory.createLineBorder(new Color(255, 128, 0), 0);
     /* private JTextField cuadroDeTexto; */
 
     public PanelComprador() {
+        depositito = new DepositoMonedas();
+        this.add(depositito);
         expri = new PanelExpendedor();
         this.setBackground(new Color(50, 24, 134));
         setBorder(borde);
         this.setLayout(null);
-        this.setBounds(600, 0, 635, 400);
-        boton0 = new JButton("0");
-        boton0.setBounds(50, 5, 50, 50);
-        boton1 = new JButton("1");
-        boton1.setBounds(50, 55, 50, 50);
-        boton2 = new JButton("2");
-        boton2.setBounds(50, 105, 50, 50);
-        boton3 = new JButton("3");
-        boton3.setBounds(50, 155, 50, 50);
-        boton4 = new JButton("4");
-        boton4.setBounds(50, 205, 50, 50);
+        this.setBounds(600, 0, 635, 700);
+        boton0 = new JButton("Coca(1500)");
+        boton0.setBounds(50, 5, 150, 50);
+        boton1 = new JButton("Fanta(1500)");
+        boton1.setBounds(50, 55, 150, 50);
+        boton2 = new JButton("Sprite(1500)");
+        boton2.setBounds(50, 105, 150, 50);
+        boton3 = new JButton("Super8(750)");
+        boton3.setBounds(50, 155, 150, 50);
+        boton4 = new JButton("Snickers(750)");
+        boton4.setBounds(50, 205, 150, 50);
         this.add(boton0);
         this.add(boton1);
         this.add(boton2);
@@ -44,7 +47,13 @@ public class PanelComprador extends JPanel {
         boton0.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                expri.sacarcoca();
+                try {
+                    if(depositito.compararprecio(1500)==true) {
+                        expri.sacarcoca();
+                    }
+                } catch (NoHayProductoException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
         boton1.addActionListener(new ActionListener() {

@@ -66,7 +66,7 @@ public class DepositoMonedas extends JPanel {
         this.setLayout(new GridLayout(1,5));
         this.setBackground(new Color(1,1,1, 234));
         this.setVisible(true);
-        this.setBounds(0,510,1233,150);
+        this.setBounds(0,310,635,350);
         this.setBorder(borde);
             panelBotones.add(add100);
                 add100.addActionListener(new ActionListener() {
@@ -145,6 +145,20 @@ public class DepositoMonedas extends JPanel {
             panelMonedas1500.add(labelImagen);
         }
         revalidate();
+    }
+    public boolean compararprecio(int n) throws NoHayProductoException {
+        int total = 0;
+        while(total<n){
+            total = total + Monedero.getalgo(Monedero.size()-1).getValor();
+            Monedero.getProducto();
+            if(Monedero.size()==0 && total<n){
+                throw new NoHayProductoException("no hay monedas de valor suficiente");
+            }
+            else if (total>=n){
+                return true;
+            }
+        }
+        return false;
     }
     public void paint( Graphics g ){
         super.paint(g);

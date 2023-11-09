@@ -6,6 +6,7 @@ import javax.swing.border.Border;
 import java.awt.*;
 
 public class PanelExpendedor extends JPanel {
+        // private DepositoMonedas deposi;
         private Expendedor maquinon;
         private PanelComprador compri;
         Expendedor maquina = new Expendedor(5);
@@ -16,7 +17,6 @@ public class PanelExpendedor extends JPanel {
         private int xfanta=4;
         private int xsuper8=4;
         private int xsnickers=4;
-        private String noqueda = "no queda de este producto";
         static JLabel[] labelscoca = new JLabel[5];
         static JLabel[] labelsfanta = new JLabel[5];
         static JLabel[] labelssprite = new JLabel[5];
@@ -25,7 +25,7 @@ public class PanelExpendedor extends JPanel {
         Border BordeExpendeodr = BorderFactory.createLineBorder(new Color(0, 0, 0), 0);
 
         public PanelExpendedor() {
-            this.compri = compri;
+            // deposi = new DepositoMonedas();
             this.setLayout(null);
             maquinon = new Expendedor(5);
             super8 = new ImageIcon("C:\\Users\\drago\\OneDrive\\Escritorio\\Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\SuperOcho.png");
@@ -75,7 +75,7 @@ public class PanelExpendedor extends JPanel {
             this.setVisible(true);
             this.setBackground(new Color(131, 8, 8));
             setBorder(BordeExpendeodr);
-            this.setBounds(0, 0, 625, 400);
+            this.setBounds(0, 0, 625, 700);
         }
         public void paint(Graphics g) {
             super.paint(g);
