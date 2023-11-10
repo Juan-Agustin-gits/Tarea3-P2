@@ -77,8 +77,8 @@ public class DepositoMonedas extends JPanel {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         count1++;
-                        agregar100(count1,"Tarea-2-P2/src/main/java/View/Imagenes/Moneda100SinFondo.png");
-                        //agregar100(count1,"C:\\Users\\drago\\OneDrive\\Escritorio\\Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\Moneda100SinFondo.png");
+                        //agregar100(count1,"Tarea-2-P2/src/main/java/View/Imagenes/Moneda100SinFondo.png");
+                        agregar100(count1,"C:\\Users\\drago\\OneDrive\\Escritorio\\Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\Moneda100SinFondo.png");
                     }
                 });
             panelBotones.add(add500);
@@ -86,8 +86,8 @@ public class DepositoMonedas extends JPanel {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         count2++;
-                        agregar500(count2,"Tarea-2-P2/src/main/java/View/Imagenes/Moneda500SinFondo.png");
-                        //agregar500(count2,"C:\\Users\\drago\\OneDrive\\Escritorio\\Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\Moneda500SinFondo.png");
+                        //agregar500(count2,"Tarea-2-P2/src/main/java/View/Imagenes/Moneda500SinFondo.png");
+                        agregar500(count2,"C:\\Users\\drago\\OneDrive\\Escritorio\\Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\Moneda500SinFondo.png");
                     }
                 });
             panelBotones.add(add1000);
@@ -95,8 +95,8 @@ public class DepositoMonedas extends JPanel {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         count3++;
-                        agregar1000(count3,"Tarea-2-P2/src/main/java/View/Imagenes/Moneda1000SinFondo.png");
-                        //agregar1000(count3,"C:\\Users\\drago\\OneDrive\\Escritorio\\Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\Moneda1000SinFondo.png");
+                        //agregar1000(count3,"Tarea-2-P2/src/main/java/View/Imagenes/Moneda1000SinFondo.png");
+                        agregar1000(count3,"C:\\Users\\drago\\OneDrive\\Escritorio\\Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\Moneda1000SinFondo.png");
                     }
                 });
             panelBotones.add(add1500);
@@ -104,8 +104,8 @@ public class DepositoMonedas extends JPanel {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         count4++;
-                        agregar1500(count4,"Tarea-2-P2/src/main/java/View/Imagenes/Moneda1500SinFondo.png");
-                        //agregar1500(count4,"Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\Moneda1500SinFondo.png");
+                        //agregar1500(count4,"Tarea-2-P2/src/main/java/View/Imagenes/Moneda1500SinFondo.png");
+                        agregar1500(count4,"C:\\Users\\drago\\OneDrive\\Escritorio\\Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\Moneda1500SinFondo.png");
                     }
                 });
             //panelMonedas.setIcon(Moneda100);
