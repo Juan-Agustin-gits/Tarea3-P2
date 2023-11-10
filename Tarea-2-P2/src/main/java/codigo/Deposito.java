@@ -39,7 +39,12 @@ public class Deposito<T> {
             throw new NoHayProductoException("No hay productos en el depósito");
         }
     }
-
+    public void vaciar(){
+        array.clear();
+    }
+    public ArrayList<Monedas> clonar(){
+        return (ArrayList<Monedas>) array.clone();
+    }
 
 
 }
