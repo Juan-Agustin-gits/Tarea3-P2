@@ -1,12 +1,14 @@
-/* package View;
+ package View;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
-public class VentanaLlenarDeposito extends JFrame {
-    private PanelExpendedor panelExpendedor = new PanelExpendedor();
+ public class VentanaLlenarDeposito extends JFrame {
+    private PanelExpendedor panelExpendedor;
     private JButton Depfanta = new JButton();
     private JButton Depcocacola = new JButton();
     private JButton Depsprite = new JButton();
@@ -15,29 +17,47 @@ public class VentanaLlenarDeposito extends JFrame {
     public VentanaLlenarDeposito(){
         JPanel panel = new JPanel();
             panel.add(Depfanta);
-                Depfanta.setIcon(panelExpendedor.getFantaNueva());
+                Depfanta.setIcon(panelExpendedor.getFanta());
+                    Depfanta.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            panelExpendedor.llenarFanta();
+                        }
+                    });
             panel.add(Depcocacola);
-                Depcocacola.setIcon(panelExpendedor.getCocaColaNueva());
+                Depcocacola.setIcon(panelExpendedor.getCoca());
             panel.add(Depsprite);
-                Depsprite.setIcon(panelExpendedor.getSpriteNueva());
+                Depsprite.setIcon(panelExpendedor.getSprite());
             panel.add(DepSuper8);
-                DepSuper8.setIcon(panelExpendedor.getSuper8Nueva());
+                DepSuper8.setIcon(panelExpendedor.getSuper8());
             panel.add(DepSnikers);
-                DepSnikers.setIcon(panelExpendedor.getSnikersNueva());
+                DepSnikers.setIcon(panelExpendedor.getSniker());
             panel.setBackground(new Color(255, 255, 255));
             panel.setVisible(true);
         this.add(panel);
         this.setVisible(true);
         this.setTitle("¿QUE DEPOSITO QUIERES LLENAR?");
         this.setBounds(500,100, 400,400);
+
     }
-    public void funcionBoton(){
-        int sizeFanta = panelExpendedor.getExpendedor().getFanta().size();
-        int sizeCoca = panelExpendedor.getExpendedor().getFanta().size();
-        int sizeSprite = panelExpendedor.getExpendedor().getSprite().size();
-        int sizeSuper = panelExpendedor.getExpendedor().getSuper8().size();
-        int sizesprite = panelExpendedor.getExpendedor().getSniker().size();
+    public boolean verificaLleno(int sizeLabel,int sizeExp ){
+        if(sizeLabel == sizeExp){
+            getVentanaLlena();
+            return false;
+        }else{
+            return true;
+        }
+    }
+    public void getVentanaLlena(){
+        JFrame ventanaLlena = new JFrame();
+        JPanel panel = new JPanel();
+        ventanaLlena.add(panel);
+        JLabel lleno = new JLabel("Deposito lleno");
+        panel.add(lleno);
+        ventanaLlena.setVisible(true);
+        ventanaLlena.setBounds(300,500,400,400);
+        ventanaLlena.setVisible(true);
     }
 }
-*/
+
 

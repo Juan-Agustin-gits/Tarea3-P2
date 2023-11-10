@@ -12,6 +12,7 @@ import java.util.TimerTask;
 
 // hay que pasarlo a un JPanel para poder organizar las monedas como un JLabel
 public class DepositoMonedas extends JPanel {
+
     public ImageIcon ReSize(ImageIcon foto){
         Image imagen = foto.getImage();
         int ancho = 50;
