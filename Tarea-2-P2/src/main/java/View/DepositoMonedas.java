@@ -70,7 +70,7 @@ public class DepositoMonedas extends JPanel {
         this.setLayout(new GridLayout(1,5));
         this.setBackground(new Color(1,1,1, 234));
         this.setVisible(true);
-        this.setBounds(0,510,1233,150);
+        this.setBounds(0,310,635,350);
         this.setBorder(borde);
             panelBotones.add(add100);
                 add100.addActionListener(new ActionListener() {
@@ -78,6 +78,7 @@ public class DepositoMonedas extends JPanel {
                     public void actionPerformed(ActionEvent e) {
                         count1++;
                         agregar100(count1,"Tarea-2-P2/src/main/java/View/Imagenes/Moneda100SinFondo.png");
+                        //agregar100(count1,"C:\\Users\\drago\\OneDrive\\Escritorio\\Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\Moneda100SinFondo.png");
                     }
                 });
             panelBotones.add(add500);
@@ -86,6 +87,7 @@ public class DepositoMonedas extends JPanel {
                     public void actionPerformed(ActionEvent e) {
                         count2++;
                         agregar500(count2,"Tarea-2-P2/src/main/java/View/Imagenes/Moneda500SinFondo.png");
+                        //agregar500(count2,"C:\\Users\\drago\\OneDrive\\Escritorio\\Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\Moneda500SinFondo.png");
                     }
                 });
             panelBotones.add(add1000);
@@ -94,6 +96,7 @@ public class DepositoMonedas extends JPanel {
                     public void actionPerformed(ActionEvent e) {
                         count3++;
                         agregar1000(count3,"Tarea-2-P2/src/main/java/View/Imagenes/Moneda1000SinFondo.png");
+                        //agregar1000(count3,"C:\\Users\\drago\\OneDrive\\Escritorio\\Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\Moneda1000SinFondo.png");
                     }
                 });
             panelBotones.add(add1500);
@@ -102,13 +105,14 @@ public class DepositoMonedas extends JPanel {
                     public void actionPerformed(ActionEvent e) {
                         count4++;
                         agregar1500(count4,"Tarea-2-P2/src/main/java/View/Imagenes/Moneda1500SinFondo.png");
+                        //agregar1500(count4,"Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\Moneda1500SinFondo.png");
                     }
                 });
             //panelMonedas.setIcon(Moneda100);
     }
     public void agregar100(int count,String ruta){
         panelMonedas100.removeAll();
-        codigo.Moneda500 moneda100 = new Moneda500();
+        codigo.Moneda100 moneda100 = new Moneda100();
         numSerie100.add(moneda100.getnSerie());
         Monedero.addProducto(moneda100);
         for (int i = 0; i < count; i++) {
@@ -214,7 +218,22 @@ public class DepositoMonedas extends JPanel {
             label.setText("");
         }
     }
+    public boolean compararprecio(int n) throws NoHayProductoException {
+        int total = 0;
+        while(total<n){
+            total = total + Monedero.getalgo(Monedero.size()-1).getValor();
+            Monedero.getProducto();
+            if(Monedero.size()==0 && total<n){
+                throw new NoHayProductoException("no hay monedas de valor suficiente");
+            }
+            else if (total>=n){
+                return true;
+            }
+        }
+        return false;
+}
     public void paint( Graphics g ){
         super.paint(g);
     }
+
 }

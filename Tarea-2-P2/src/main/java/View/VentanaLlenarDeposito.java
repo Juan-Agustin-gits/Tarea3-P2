@@ -1,4 +1,4 @@
-package View;
+/* package View;
 
 import javax.swing.*;
 import java.awt.*;
@@ -39,3 +39,5 @@ public class VentanaLlenarDeposito extends JFrame {
         int sizesprite = panelExpendedor.getExpendedor().getSniker().size();
     }
 }
+*/
+
