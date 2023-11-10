@@ -47,7 +47,10 @@ public class DepositoMonedas extends JPanel {
     private JPanel panelMonedas1500;
         private ArrayList<Integer> numSerie1500 = new ArrayList<>();
     private Deposito<Monedas>  Monedero= new Deposito<>();
-    // dejar esto en un panel distinto
+    private Deposito<Monedas>  MonederoDeAyuda= new Deposito<>();
+    private Deposito<Monedas>  MonederoDeAyuda2= new Deposito<>();
+    //este puede ser el monedero de vuelto
+
     public DepositoMonedas(){
 
         this.add(panelMonedas100 = new JPanel());
@@ -218,20 +221,56 @@ public class DepositoMonedas extends JPanel {
             label.setText("");
         }
     }
+    //con el siguiente metodo, se seleccionan las monedas en monedero y se comparan con los precios,
+    //se toma desde la última moneda metida al monedero hasta el primero
+    private int total=0;
     public boolean compararprecio(int n) throws NoHayProductoException {
-        int total = 0;
-        while(total<n){
-            total = total + Monedero.getalgo(Monedero.size()-1).getValor();
-            Monedero.getProducto();
-            if(Monedero.size()==0 && total<n){
-                throw new NoHayProductoException("no hay monedas de valor suficiente");
-            }
-            else if (total>=n){
-                return true;
-            }
+        //MonederoDeAyuda2 = Monedero.copy();
+        if(Monedero.size()==0){
+            noalcanza();
+            return false;
         }
+        //este if no se toca
+        while(total<n){
+            total = total + Monedero.getalgo(Monedero.size() - 1).getValor();
+            MonederoDeAyuda.addProducto(Monedero.getProducto());
+            //System.out.print(MonederoDeAyuda.getProducto());
+                    if (Monedero.size() == 0 && total < n) {
+                        noalcanza();
+                        Monedero.vaciar();
+                        MonederoDeAyuda.vaciar();
+                        total=0;
+                        return false;
+                        /*si se pone menos del precio necesario el array de monedero se va a 0
+                        pero se quedan guardadas en un historial las monedas ocupadas
+                         */
+                    }
+                    else if (total >= n) {
+                        if(total>n){
+                            for(int j=0; j<total-n;j=j+100){
+                                MonederoDeAyuda2.addProducto(new Moneda100());
+                            }
+                        }
+                        total=0;
+                        //aqui debo poner el array MONEDERODEAYUDA que se va a graficar en expendedor
+                        return true ;
+                    }
+            }
         return false;
 }
+    public Deposito<Monedas> getMonederoDeAyuda2() {
+        return MonederoDeAyuda2;
+    }
+    public void noalcanza(){
+        JFrame frami = new JFrame("No puedes comprar");
+        frami.setSize(300, 200);
+        JPanel panel = new JPanel();
+        JTextField textField = new JTextField("No tienes el dinero suficiente");
+        textField.setEditable(false);
+        panel.add(textField);
+        frami.add(panel);
+        frami.setVisible(true);
+    }
     public void paint( Graphics g ){
         super.paint(g);
     }

@@ -10,6 +10,10 @@ import codigo.*;
 
 public class PanelComprador extends JPanel {
     /*private ImageIcon super8;*/
+    private ImageIcon monedaVuelto = new ImageIcon("C:\\Users\\drago\\OneDrive\\Escritorio\\Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\Moneda100SinFondo.png");
+        private Image imagen = monedaVuelto.getImage();
+            private Image Resize = imagen.getScaledInstance(20,20,Image.SCALE_SMOOTH);
+                private ImageIcon MonedaResize = new ImageIcon(Resize);
     private PanelExpendedor expri;
     JButton boton0;
     JButton boton1;
@@ -17,12 +21,25 @@ public class PanelComprador extends JPanel {
     JButton boton3;
     JButton boton4;
     private DepositoMonedas depositito;
+    private JPanel panelvuelto;
+    //private JLabel vueltito;
     Border borde = BorderFactory.createLineBorder(new Color(255, 128, 0), 0);
     /* private JTextField cuadroDeTexto; */
 
     public PanelComprador() {
+        //vueltito = new JLabel();
+        /*for(int j=0; j<depositito.getMonederoDeAyuda2().size();j++){
+        }*/
+        panelvuelto = new JPanel();
+        panelvuelto.setLayout(new FlowLayout());
+        panelvuelto.setBounds(430,10,200,100);
+        panelvuelto.setBackground(new Color(0,0,0));
+        this.add(panelvuelto);
         depositito = new DepositoMonedas();
         this.add(depositito);
+        /*JLabel monediti = new JLabel(monedaVuelto);
+        monediti.setVisible(true);
+        panelvuelto.add(monediti);*/
         expri = new PanelExpendedor();
         this.setBackground(new Color(50, 24, 134));
         setBorder(borde);
@@ -34,9 +51,9 @@ public class PanelComprador extends JPanel {
         boton1.setBounds(50, 55, 150, 50);
         boton2 = new JButton("Sprite(1500)");
         boton2.setBounds(50, 105, 150, 50);
-        boton3 = new JButton("Super8(750)");
+        boton3 = new JButton("Super8(800)");
         boton3.setBounds(50, 155, 150, 50);
-        boton4 = new JButton("Snickers(750)");
+        boton4 = new JButton("Snickers(800)");
         boton4.setBounds(50, 205, 150, 50);
         this.add(boton0);
         this.add(boton1);
@@ -49,7 +66,14 @@ public class PanelComprador extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 try {
                     if(depositito.compararprecio(1500)==true) {
+                        panelvuelto.removeAll();
                         expri.sacarcoca();
+                        for(int g=0; g<depositito.getMonederoDeAyuda2().size();g++){
+                            JLabel monediti = new JLabel(MonedaResize);
+                            monediti.setVisible(true);
+                            panelvuelto.add(monediti);
+                        }
+                        //System.out.print(depositito.getMonederoDeAyuda2().size());
                     }
                 } catch (NoHayProductoException ex) {
                     throw new RuntimeException(ex);
@@ -59,25 +83,49 @@ public class PanelComprador extends JPanel {
         boton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                expri.sacarfanta();
+                try {
+                    if(depositito.compararprecio(1500)==true) {
+                        expri.sacarfanta();
+                    }
+                } catch (NoHayProductoException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
         boton2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                expri.sacarsprite();
+                try {
+                    if(depositito.compararprecio(1500)==true) {
+                        expri.sacarsprite();
+                    }
+                } catch (NoHayProductoException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
         boton3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                expri.sacarsuper8();
+                try {
+                    if(depositito.compararprecio(800)==true) {
+                        expri.sacarsuper8();
+                    }
+                } catch (NoHayProductoException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
         boton4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                expri.sacarsnickers();
+                try {
+                    if(depositito.compararprecio(800)==true) {
+                        expri.sacarsnickers();
+                    }
+                } catch (NoHayProductoException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
         /*cuadroDeTexto = new JTextField();

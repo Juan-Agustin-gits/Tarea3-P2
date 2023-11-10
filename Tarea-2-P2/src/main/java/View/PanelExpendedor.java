@@ -22,9 +22,14 @@ public class PanelExpendedor extends JPanel {
         static JLabel[] labelssprite = new JLabel[5];
         static JLabel[] labelssuper8 = new JLabel[5];
         static JLabel[] labelssnickers = new JLabel[5];
+        private JPanel receptor;
         Border BordeExpendeodr = BorderFactory.createLineBorder(new Color(0, 0, 0), 0);
 
         public PanelExpendedor() {
+            receptor = new JPanel();
+            receptor.setBackground(new Color(0,0,0));
+            receptor.setBounds(20,400,500,200);
+            this.add(receptor);
             // deposi = new DepositoMonedas();
             this.setLayout(null);
             maquinon = new Expendedor(5);
@@ -133,7 +138,7 @@ public class PanelExpendedor extends JPanel {
                 frami.setSize(300, 200);
             JPanel panel = new JPanel();
             // Crear un cuadro de texto con el contenido "No queda"
-            JTextField textField = new JTextField("No queda");
+            JTextField textField = new JTextField("No queda del producto seleccionado");
             // Deshabilitar la edición para que el texto no sea modificable
             textField.setEditable(false);
             // Agregar el cuadro de texto al panel
