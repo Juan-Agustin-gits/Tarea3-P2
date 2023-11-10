@@ -33,7 +33,7 @@ public class Deposito<T> {
      */
     public T getProducto()  throws NoHayProductoException { //pese a que es getproducto tmbn puede servir como get moneda
         if (array.size() != 0) {
-            return array.remove(0);
+            return array.remove(array.size()-1);
         }
         else{
             throw new NoHayProductoException("No hay productos en el depósito");
@@ -45,6 +45,8 @@ public class Deposito<T> {
     public ArrayList<Monedas> clonar(){
         return (ArrayList<Monedas>) array.clone();
     }
-
+    public T getalgo(int i){
+        return array.get(i);
+    }
 
 }
