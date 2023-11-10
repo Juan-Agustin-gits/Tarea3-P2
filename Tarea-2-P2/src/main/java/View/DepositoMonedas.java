@@ -1,14 +1,14 @@
 package View;
 
-import codigo.Moneda100;
+import codigo.*;
 
+import javax.management.timer.Timer;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.TimerTask;
 
 // hay que pasarlo a un JPanel para poder organizar las monedas como un JLabel
 public class DepositoMonedas extends JPanel {
@@ -39,9 +39,14 @@ public class DepositoMonedas extends JPanel {
         private int count4 = 0;
 
     private JPanel panelMonedas100;
+        private ArrayList<Integer> numSerie100 = new ArrayList<>();
     private JPanel panelMonedas500;
+        private ArrayList<Integer> numSerie500 = new ArrayList<>();
     private JPanel panelMonedas1000;
+        private ArrayList<Integer> numSerie1000 = new ArrayList<>();
     private JPanel panelMonedas1500;
+        private ArrayList<Integer> numSerie1500 = new ArrayList<>();
+    private Deposito<Monedas>  Monedero= new Deposito<>();
     // dejar esto en un panel distinto
     public DepositoMonedas(){
 
@@ -73,7 +78,6 @@ public class DepositoMonedas extends JPanel {
                     public void actionPerformed(ActionEvent e) {
                         count1++;
                         agregar100(count1,"Tarea-2-P2/src/main/java/View/Imagenes/Moneda100SinFondo.png");
-                        System.out.println("funciona");
                     }
                 });
             panelBotones.add(add500);
@@ -104,39 +108,111 @@ public class DepositoMonedas extends JPanel {
     }
     public void agregar100(int count,String ruta){
         panelMonedas100.removeAll();
+        codigo.Moneda500 moneda100 = new Moneda500();
+        numSerie100.add(moneda100.getnSerie());
+        Monedero.addProducto(moneda100);
         for (int i = 0; i < count; i++) {
             ImageIcon imagen = new ImageIcon(ruta);
             JLabel labelImagen = new JLabel(imagen);
             panelMonedas100.add(labelImagen);
+            int serie = numSerie100.get(i);
+                labelImagen.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseEntered(MouseEvent e) {
+                        super.mouseEntered(e);
+                        imprimirNserie(labelImagen,serie,true);
+                    }
+                    @Override
+                    public void mouseExited(MouseEvent e) {
+                        super.mouseExited(e);
+                        imprimirNserie(labelImagen,serie,false);
+                    }
+                });
         }
         revalidate();
     }
     public void agregar500(int count,String ruta){
         panelMonedas500.removeAll();
+        codigo.Moneda500 moneda500 = new Moneda500();
+        numSerie500.add(moneda500.getnSerie());
+        Monedero.addProducto(moneda500);
         for (int i = 0; i < count; i++) {
             ImageIcon imagen = new ImageIcon(ruta);
             JLabel labelImagen = new JLabel(imagen);
             panelMonedas500.add(labelImagen);
+            int serie = numSerie500.get(i);
+                labelImagen.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseEntered(MouseEvent e) {
+                        super.mouseEntered(e);
+                        imprimirNserie(labelImagen,serie,true);
+                    }
+                    @Override
+                    public void mouseExited(MouseEvent e) {
+                        super.mouseExited(e);
+                        imprimirNserie(labelImagen,serie,false);
+                    }
+                });
         }
         revalidate();
     }
     public void agregar1000(int count,String ruta){
         panelMonedas1000.removeAll();
+        codigo.Moneda1000 moneda1000 = new Moneda1000();
+        numSerie1000.add(moneda1000.getnSerie());
+        Monedero.addProducto(moneda1000);
         for (int i = 0; i < count; i++) {
             ImageIcon imagen = new ImageIcon(ruta);
             JLabel labelImagen = new JLabel(imagen);
             panelMonedas1000.add(labelImagen);
+            int serie = numSerie1000.get(i);
+                labelImagen.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseEntered(MouseEvent e) {
+                        super.mouseEntered(e);
+                        imprimirNserie(labelImagen,serie,true);
+                    }
+                    @Override
+                    public void mouseExited(MouseEvent e) {
+                        super.mouseExited(e);
+                        imprimirNserie(labelImagen,serie,false);
+                    }
+                });
         }
         revalidate();
     }
     public void agregar1500(int count,String ruta){
         panelMonedas1500.removeAll();
+        codigo.Moneda1500 moneda1500 = new Moneda1500();
+        numSerie1500.add(moneda1500.getnSerie());
+        Monedero.addProducto(moneda1500);
         for (int i = 0; i < count; i++) {
             ImageIcon imagen = new ImageIcon(ruta);
             JLabel labelImagen = new JLabel(imagen);
             panelMonedas1500.add(labelImagen);
+            int serie = numSerie1500.get(i);
+            labelImagen.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseEntered(MouseEvent e) {
+                    super.mouseEntered(e);
+                    imprimirNserie(labelImagen,serie,true);
+                }
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    super.mouseExited(e);
+                    imprimirNserie(labelImagen,serie,false);
+                }
+            });
         }
         revalidate();
+    }
+    public void imprimirNserie(JLabel label,int numeroDeSerie,boolean bandera){
+        if(bandera){
+            String num = String.valueOf(numeroDeSerie);
+            label.setText(num);
+        }else {
+            label.setText("");
+        }
     }
     public void paint( Graphics g ){
         super.paint(g);
