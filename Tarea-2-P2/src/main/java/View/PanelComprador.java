@@ -14,7 +14,9 @@ import codigo.*;
  */
 public class PanelComprador extends JPanel {
     /*private ImageIcon super8;*/
-    private ImageIcon monedaVuelto = new ImageIcon("src/main/java/View/Imagenes/Moneda100SinFondo.png");
+    private ImageIcon monedaVuelto = new ImageIcon("Tarea-2-P2/src/main/java/View/Imagenes/Moneda100SinFondo.png");
+                                        //en caso de errores usar : src/main/java/View/Imagenes/Moneda100SinFondo.png     o
+                                                //C:\\Users\\drago\\OneDrive\\Escritorio\\Tarea3-P2\\Tarea-2-P2\\src\\main\\java\\View\\Imagenes\\Moneda100SinFondo.png
         private Image imagen = monedaVuelto.getImage();
             private Image Resize = imagen.getScaledInstance(20,20,Image.SCALE_SMOOTH);
                 private ImageIcon MonedaResize = new ImageIcon(Resize);
