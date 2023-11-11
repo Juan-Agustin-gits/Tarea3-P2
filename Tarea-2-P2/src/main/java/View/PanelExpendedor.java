@@ -211,6 +211,7 @@ public class PanelExpendedor extends JPanel {
                     public void actionPerformed(ActionEvent e) {
                         seLleno = true;
                         llenarFanta();
+                        xfanta = labelsfanta.length-1;
                         System.out.println("al pretar el boton"+xfanta);
                     }
                 });
