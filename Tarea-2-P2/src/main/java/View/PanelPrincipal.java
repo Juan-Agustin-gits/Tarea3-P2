@@ -3,6 +3,9 @@ package View;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Clase tipo JPnel que contiene a PanelExpendedor y PanelComprador.
+ */
 public class PanelPrincipal extends JPanel {
     private PanelComprador comprador;
     private PanelExpendedor expendedor;
@@ -17,6 +20,10 @@ public class PanelPrincipal extends JPanel {
              this.add(expendedor = new PanelExpendedor());
              //this.add(depositoMonedas = new DepositoMonedas());
         }
+
+    /**
+     * @param g the <code>Graphics</code> context in which to paint
+     */
     public void paint ( Graphics g ){
              super.paint(g);
         }

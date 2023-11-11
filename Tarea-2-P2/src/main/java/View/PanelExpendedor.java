@@ -9,6 +9,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ * Clase JPanel del Expendedor
+ */
 public class PanelExpendedor extends JPanel {
         // private DepositoMonedas deposi;
         boolean seLleno ;
@@ -27,10 +30,18 @@ public class PanelExpendedor extends JPanel {
         private int xfanta    = labelsfanta.length-1;
         private int xsuper8   = labelssuper8.length-1 ;
         private int xsnickers = labelssnickers.length-1 ;
+        private JPanel receptor;
         Border BordeExpendeodr = BorderFactory.createLineBorder(new Color(0, 0, 0), 0);
 
 
+    /**
+     * Constructor de la clase, que agrega un Mouse Listener al JPanel, llamendo a los metodos internos
+     */
         public PanelExpendedor() {
+            receptor = new JPanel();
+            receptor.setBackground(new Color(0,0,0));
+            receptor.setBounds(20,400,500,200);
+            this.add(receptor);
             // deposi = new DepositoMonedas();
             // todas las rutas comentadas son la que sirven en ramaAlan
             this.setLayout(null);
@@ -100,6 +111,11 @@ public class PanelExpendedor extends JPanel {
         public void paint(Graphics g) {
             super.paint(g);
         }
+
+
+    /**
+     * Metodo para sacar un prducto
+     */
         public void sacarcoca(){
             if(xcoca>=0){
                 labelscoca[xcoca].setVisible(false);
@@ -109,6 +125,10 @@ public class PanelExpendedor extends JPanel {
                 noqueda();
             }
         }
+
+    /**
+     * Metodo para sacar un producto
+     */
         public void sacarfanta(){
             if(xfanta>=0 && xfanta < labelsfanta.length ){
                 labelsfanta[xfanta].setVisible(false);
@@ -119,6 +139,10 @@ public class PanelExpendedor extends JPanel {
             }
 
         }
+
+    /**
+     * Metodo para sacar un producto
+     */
         public void sacarsprite(){
             if(xsprite>=0){
                 labelssprite[xsprite].setVisible(false);
@@ -128,6 +152,10 @@ public class PanelExpendedor extends JPanel {
                 noqueda();
             }
         }
+
+    /**
+     * Metodo para sacar un producto
+     */
         public void sacarsuper8(){
             if(xsuper8>=0){
                 labelssuper8[xsuper8].setVisible(false);
@@ -137,6 +165,10 @@ public class PanelExpendedor extends JPanel {
                 noqueda();
             }
         }
+
+    /**
+     * Metodo para sacar un producto
+     */
         public void sacarsnickers(){
             if(xsnickers>=0){
                 labelssnickers[xsnickers].setVisible(false);
@@ -146,12 +178,16 @@ public class PanelExpendedor extends JPanel {
                 noqueda();
             }
         }
+
+    /**
+     * Metodo que crea un ventana tipo JFrame
+     */
         public void noqueda(){
             JFrame frami = new JFrame("No hay producto");
                 frami.setSize(300, 200);
             JPanel panel = new JPanel();
             // Crear un cuadro de texto con el contenido "No queda"
-            JTextField textField = new JTextField("No queda");
+            JTextField textField = new JTextField("No queda del producto seleccionado");
             // Deshabilitar la edición para que el texto no sea modificable
             textField.setEditable(false);
             // Agregar el cuadro de texto al panel
@@ -160,10 +196,18 @@ public class PanelExpendedor extends JPanel {
             frami.setVisible(true);
         }
     int auxCoca = xcoca;
+
+    /**
+     * Llena el deposito de coca
+     */
         public void llenarCoca(){
             labelscoca[auxCoca].setVisible(true);
             auxCoca = auxCoca-1;
         }
+
+    /**
+     * Llena el deposito de fanta
+     */
         public void llenarFanta(){
             //labelsfanta[auxFanta].setVisible(true);
             //auxFanta = auxFanta -1;
@@ -172,21 +216,41 @@ public class PanelExpendedor extends JPanel {
             }
             xfanta = labelsfanta.length - 1 ;
         }
-    int auxSprite = xsprite;
+
+    /**
+     * Llena el deposito de Sprites
+     */
         public void llenarSprite(){
-        labelssprite[auxSprite].setVisible(true);
-        auxSprite = auxSprite-1;
+            for (int i = 0; i < maquina.getCantidadProductos(); i++) {
+                labelssprite[i].setVisible(true);
+            }
+            xfanta = labelsfanta.length - 1 ;
     }
-    int auxSuper8 = xsuper8;
+
+    /**
+     * llena el deposito de super8
+     */
         public void llenarSuper8(){
-        labelssuper8[auxSuper8].setVisible(true);
-        auxSuper8 = auxSuper8-1;
+            for (int i = 0; i < maquina.getCantidadProductos(); i++) {
+                labelssuper8[i].setVisible(true);
+            }
+            xfanta = labelsfanta.length - 1 ;
     }
-    int auxSnikers = xsnickers;
+
+    /**
+     * llena el deposito de snikers
+     */
         public void llenarSnikers(){
-        labelssnickers[auxSnikers].setVisible(true);
-        auxSnikers = auxSnikers-1;
+            for (int i = 0; i < maquina.getCantidadProductos(); i++) {
+                labelssnickers[i].setVisible(true);
+            }
+            xfanta = labelsfanta.length - 1 ;
     }
+
+    /**
+     * Crea una ventana para llenar cada uno de los depositos de productos
+     * cuenta con un boton para cada uno de los depositos
+     */
     public void llenarDep(){
             System.out.println("valor inicial"+xfanta);
             JFrame frame = new JFrame("¿QUE DEPOSITO QUIERES LLENAR?");
@@ -246,51 +310,45 @@ public class PanelExpendedor extends JPanel {
         frame.setVisible(true);
     }
 
+    /**
+     * @return
+     */
     public Expendedor getMaquina() {
         return maquina;
     }
 
+    /**
+     * @return
+     */
     public ImageIcon getCoca() {
         return coca;
     }
 
+    /**
+     * @return
+     */
     public ImageIcon getFanta() {
         return fanta;
     }
 
+    /**
+     * @return
+     */
     public ImageIcon getSprite() {
         return sprite;
     }
 
+    /**
+     * @return
+     */
     public ImageIcon getSuper8() {
         return super8;
     }
 
+    /**
+     * @return
+     */
     public ImageIcon getSniker() {
         return sniker;
-    }
-
-    public int getSizeLabelscoca() {
-        return labelscoca.length;
-    }
-
-    public int getSizeLabelsfanta() {
-        return labelsfanta.length;
-    }
-
-    public int getSizeLabelssprite() {
-        return labelssprite.length;
-    }
-
-    public int getSizeLabelssuper8() {
-        return labelssuper8.length;
-    }
-
-    public int getSizeLabelsnickers() {
-        return labelssnickers.length;
-    }
-
-    public int getXfanta() {
-        return xfanta;
     }
 }

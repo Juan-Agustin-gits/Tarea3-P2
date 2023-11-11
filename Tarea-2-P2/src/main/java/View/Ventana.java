@@ -3,6 +3,9 @@ import codigo.Comprador;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Ventana que contiene a Panel Principal
+ */
 public class Ventana extends JFrame {
     private PanelPrincipal panelPrincipal;
     private DepositoMonedas depositoMonedas;

@@ -8,6 +8,7 @@ import java.util.ArrayList;
  */
 public class Deposito<T> {
     private ArrayList<T> array;
+    private T[] productos;
 
     /**
      * Constructor de Deposito
@@ -48,5 +49,12 @@ public class Deposito<T> {
     public T getalgo(int i){
         return array.get(i);
     }
+    /*public Deposito<T> copy() {
+        Deposito<T> copyDeposito = new Deposito<>();
+        for (T producto : this.productos) {
+            copyDeposito.addProducto(producto);
+        }
+        return copyDeposito;
+    }*/
 
 }
