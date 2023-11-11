@@ -8,6 +8,7 @@ import java.util.ArrayList;
  */
 public class Deposito<T> {
     private ArrayList<T> array;
+    private T[] productos;
 
     /**
      * Constructor de Deposito
@@ -33,13 +34,27 @@ public class Deposito<T> {
      */
     public T getProducto()  throws NoHayProductoException { //pese a que es getproducto tmbn puede servir como get moneda
         if (array.size() != 0) {
-            return array.remove(0);
+            return array.remove(array.size()-1);
         }
         else{
             throw new NoHayProductoException("No hay productos en el depósito");
         }
     }
-
-
+    public void vaciar(){
+        array.clear();
+    }
+    public ArrayList<Monedas> clonar(){
+        return (ArrayList<Monedas>) array.clone();
+    }
+    public T getalgo(int i){
+        return array.get(i);
+    }
+    /*public Deposito<T> copy() {
+        Deposito<T> copyDeposito = new Deposito<>();
+        for (T producto : this.productos) {
+            copyDeposito.addProducto(producto);
+        }
+        return copyDeposito;
+    }*/
 
 }
